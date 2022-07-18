@@ -1,9 +1,10 @@
 import React from 'react';
+import ExtraCard from './ExtraCard';
 import ParticleBackground from './ParticleBackground';
 
 const Banner = () => {
     return (
-        <div>
+        <div className='bg-[#2a303c] pb-12' >
             <ParticleBackground />
         <div className='min-h-screen '>
         {/* <ParticleBackground /> */}
@@ -17,7 +18,7 @@ const Banner = () => {
                 <div>
                     <p className='text-6xl text-[#9e9e9e] mt-12'>EXCLUSIVE</p>
                     <p className='text-6xl text-[#60768e] font-bold mb-12'>FURNITURE</p>
-                    <p className=' w-full lg:w-3/4'>Hello Here you can see best furniture what you want. Also we give you the discount for this month and our all furniture is best quality in this world. All furniture make by best wood and best technologies. </p>
+                    <p className='text-white w-full lg:w-3/4'>Hello Here you can see best furniture what you want. Also we give you the discount for this month and our all furniture is best quality in this world. All furniture make by best wood and best technologies. </p>
                     <button className='bg-[#5c7897] rounded-full text-white mt-4 py-2 px-8 font-semibold text-xl'>Shop Now</button>
                 </div>
             </div>
@@ -39,7 +40,7 @@ const Banner = () => {
             </div>
         </div>
     </div>
- 
+    <ExtraCard />
     </div>
     );
 };
