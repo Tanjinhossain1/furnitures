@@ -1,8 +1,10 @@
 import React from 'react';
+import ParticleBackground from './ParticleBackground';
 
 const Banner = () => {
     return (
         <div>
+            <ParticleBackground />
         <div className='min-h-screen '>
         {/* <ParticleBackground /> */}
         <div className='lg:flex  justify-between items-center lg:ml-32 mx-auto  '>
