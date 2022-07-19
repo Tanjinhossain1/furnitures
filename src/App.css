@@ -14,7 +14,41 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
+@keyframes slidein {
+  0% {
+    margin-left: 0%;
+  }
+  50% {
+    margin-left: 300px;
+  }
+  100% {
+    margin-left: 0%;
+  }
+}
+@keyframes shine {
+  0% {
+    background-position-x: -500%;
+  }
+  100% {
+    background-position-x: 500%;
+  }
+}
+.homes{
+  background: linear-gradient(5deg,#f02711,#b8f011, #ee7752, #e73c7e, #23a6d5, #23d5ab,#8810eb,#f1f505,#0d1382,#f08811,#11f080,#11bcf0,#350a6b);
+  /* background-size: 400% 400%; */
+  /* animation: gradient 15s ease infinite; */
+}
+@keyframes gradient {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
