@@ -18,6 +18,7 @@ const ParticleBackground = () => {
     return (
         <div>
           <Particles
+          className='h-[500px]'
       id="Links"
       init={particlesInit}
       loaded={particlesLoaded}

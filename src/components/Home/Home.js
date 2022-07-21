@@ -1,4 +1,5 @@
 import React from 'react';
+import Furnitures from '../furnitures/Furnitures';
 import Banner from './Banner';
 import FurnitureDesign from './FurnitureDesign';
 
@@ -7,6 +8,7 @@ const Home = () => {
         <div>
             <Banner />
            <FurnitureDesign />
+           <Furnitures />
         </div>
     );
 };
