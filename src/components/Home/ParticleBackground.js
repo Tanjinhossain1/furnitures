@@ -18,7 +18,6 @@ const ParticleBackground = () => {
     return (
         <div>
           <Particles
-          className='h-[500px]'
       id="Links"
       init={particlesInit}
       loaded={particlesLoaded}
@@ -53,7 +52,7 @@ const ParticleBackground = () => {
         },
         particles: {
           color: {
-            value: "#ffffff",
+            value: "#625470",
           },
           links: {
             color: "",

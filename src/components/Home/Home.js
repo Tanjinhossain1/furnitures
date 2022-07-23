@@ -2,6 +2,7 @@ import React from 'react';
 import Furnitures from '../furnitures/Furnitures';
 import Banner from './Banner';
 import FurnitureDesign from './FurnitureDesign';
+import MidChair from './BestFurniture';
 
 const Home = () => {
     return (
@@ -9,6 +10,7 @@ const Home = () => {
             <Banner />
            <FurnitureDesign />
            <Furnitures />
+           <MidChair />
         </div>
     );
 };

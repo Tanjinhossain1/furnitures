@@ -5,7 +5,7 @@ import ParticleBackground from './ParticleBackground';
 const Banner = () => {
     return (
         <div className='bg-[#2a303c] pb-12' >
-            <ParticleBackground />
+            {/* <ParticleBackground /> */}
         <div className='min-h-screen '>
         {/* <ParticleBackground /> */}
         <div className='lg:flex  justify-between items-center lg:ml-32 mx-auto  '>

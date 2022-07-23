@@ -3,8 +3,8 @@ import React from 'react';
 const FurnitureDesign = () => {
 
     return (
-        <div className='mb-12 bg-fixed'>
-            <div className='bg-fixed bg-[#090221] py-20'>
+        <div className='bg-fixed'>
+            <div style={{backgroundImage:`url(https://wallpaperaccess.com/full/1116905.jpg)`}} className='bg-fixed bg-[] py-20'>
                 <div className='lg:flex w-3/4 mx-auto text-white justify-evenly items-center '>
                     <div>
                         <h1 className='text-6xl font-semibold'>Smart solution for <br /> modern living</h1>
