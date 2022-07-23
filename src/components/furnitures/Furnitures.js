@@ -10,7 +10,7 @@ const Furnitures = () => {
     }, [])
     
     return (
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
+        <div className='lg:w-3/4 my-32 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
             {
                 furnitures.map((furniture, index) => <Furniture furniture={furniture} key={index} />)
             }
