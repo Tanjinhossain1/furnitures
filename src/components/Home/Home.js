@@ -3,14 +3,16 @@ import Furnitures from '../furnitures/Furnitures';
 import Banner from './Banner';
 import FurnitureDesign from './FurnitureDesign';
 import MidChair from './BestFurniture';
+import Creative from './Creative';
 
 const Home = () => {
     return (
         <div>
             <Banner />
            <FurnitureDesign />
-           <Furnitures />
            <MidChair />
+           <Furnitures />
+           <Creative />
         </div>
     );
 };

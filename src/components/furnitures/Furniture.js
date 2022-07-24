@@ -14,7 +14,7 @@ console.log(name)
                     onMouseLeave={e => {
                         setHoverDone(false)
                     }}>
-                    <div className={`bg-white lg:w-[330px] xl:w-[470px] 2xl:w-[540px] duration-1000 rounded-lg  px-12 mt-4 ml-[6px] mb-[-400px] absolute ${hoverDone && 'translate-y-40 bg-black text-white number1 scale-150 '}`} >
+                    <div className={`bg-white lg:w-[330px] xl:w-[400px] 2xl:w-[540px] duration-1000 rounded-lg  px-12 mt-4 ml-[6px] mb-[-400px] absolute ${hoverDone && 'translate-y-40 bg-black text-white number1 scale-150 '}`} >
                         <h1 className={`text-xl w-full duration-1000 ${hoverDone && 'text-red-600'}`}>{name}</h1>
                         <p>Price: <span className='font-bold text-pink-600 '> {price}$</span></p>
                         <h1 className={`  duration-1000  ${hoverDone ? 'block duration-1000  mt-4' : 'hidden'}`}>{description}</h1>
