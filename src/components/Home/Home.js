@@ -4,14 +4,16 @@ import Banner from './Banner';
 import FurnitureDesign from './FurnitureDesign';
 import MidChair from './BestFurniture';
 import Creative from './Creative';
+import ModernCollection from './ModernCollection';
 
 const Home = () => {
     return (
         <div>
-            <Banner />
-           <FurnitureDesign />
            <MidChair />
+           {/* <FurnitureDesign /> */}
+           <ModernCollection />
            <Furnitures />
+            {/* <Banner /> */}
            <Creative />
         </div>
     );
