@@ -24,7 +24,7 @@ const Home = () => {
            <WeOffer />
            {/* <FurnitureDesign /> */}
            <ModernCollection />
-           <Furnitures />
+           {/* <Furnitures /> */}
             {/* <Banner /> */}
            <Creative />
            <HomeBlog />
