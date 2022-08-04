@@ -35,7 +35,7 @@ const WeOffer = () => {
 
                 </div>
             </div>
-            
+
         </div>
     );
 };

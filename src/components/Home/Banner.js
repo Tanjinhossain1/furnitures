@@ -27,7 +27,7 @@ const Banner = () => {
                     </div>
                     
 
-                    <div className='number1 hidden lg:block mr-[-150px]'>
+                    <div className=' hidden lg:block mr-[-150px]'>
                         <div className='bg-gradient-to-r from-[#9f9fe3] to-[#fafbfc]  p-2 rounded-[50%]'>
                             <div className='bg-gradient-to-r from-[#bad5da] to-[#de95c4]  p-2 rounded-[50%] '>
 

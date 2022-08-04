@@ -4,7 +4,7 @@ import React from 'react';
 
 const BestFurniture = () => {
     return (
-        <div className=''>
+        <div    className=''>
             <div>
                 <div className='bg-gradient-to-br from-[#7cabd4] via-[#ebeced] to-[#d4e5f8] ' >
                     <div className='w-3/4 mx-auto py-32 lg:flex items-center justify-between '>
@@ -14,7 +14,10 @@ const BestFurniture = () => {
 
                             <p className='mt-8'>Find The Lower Price for Design in london <br /> today. Now on sale at super mall</p>
                             <div className='my-6 flex items-center'>
+                                <a href="/#furnitures ">
                                 <button className='duration-700 border-2 border-transparent rounded-lg bg-[#2571b0] px-6 py-2 text-white hover:text-black hover:bg-transparent hover:border-2 hover:border-[#2571b0] '>Order Now</button>
+                                </a>
+                               
                                 <button className='text-[#2571b0] flex items-center lg:ml-12 font-semibold '> <FontAwesomeIcon className='text-3xl' icon={faCirclePlay} /><p className='ml-5'> How To Order</p></button>
                             </div>
                             <button className='duration-700 rounded-lg text-[#2571b0] border-2 border-[#2571b0] px-4 py-2 hover:bg-[#2571b0] hover:text-white '>Discover The Best</button>
@@ -27,7 +30,7 @@ const BestFurniture = () => {
                     </div>
                     {/* extra down section  */}
                 </div>
-                <div className='bg-[#2571b0] py-12  '>
+                <div  className='bg-[#2571b0] py-12  '>
                     <div className='w-3/4 mx-auto lg:flex items-center justify-between ' >
                         <div className='bg-gradient-to-b from-[#ebeced] via-[#eaf3fc] to-[#acc7df]  rounded-full 2xl:mt-[-250px] mt-[-130px]'>
                             <img className='hover:scale-75  ' src="https://i.ibb.co/SPFTHTq/sofa-2.png" alt="" />

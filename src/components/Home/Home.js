@@ -12,6 +12,7 @@ import WhyChooseUs from './WhyChooseUs';
 import HomeBlog from './HomeBlog';
 import Perfect from './Perfect';
 import WeOffer from './WeOffer';
+import Architectures from '../Architecture/Architectures';
 
 const Home = () => {
     return (
@@ -24,7 +25,8 @@ const Home = () => {
            <WeOffer />
            {/* <FurnitureDesign /> */}
            <ModernCollection />
-           {/* <Furnitures /> */}
+           <Furnitures />
+           <Architectures />
             {/* <Banner /> */}
            <Creative />
            <HomeBlog />

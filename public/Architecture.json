@@ -1,0 +1,51 @@
+[
+    {
+        "name":"Curbed",
+        "rating":"5",
+        "price":5000,
+        "description":"",
+        "image":"https://cdn.vox-cdn.com/thumbor/E_7yfOEb3x1gH5tTVa3OXgYBEro=/1400x1050/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/7834377/shutterstock_247548433.jpg"
+    },
+    {
+        "name":"Britannica",
+        "rating":"5",
+        "price":10000,
+        "description":"",
+        "image":"https://cdn.britannica.com/02/210202-050-D644C84B/Horyu-ji-Temple-Ikaruga-Nara-Japan-Buddhism.jpg"
+    },
+    {
+        "name":"Arcadia wards",
+        "rating":"5",
+        "price":90000,
+        "description":"",
+        "image":"https://www.arcaidawards.com/wp-content/uploads/Significant-Elements-Of-Modern-Architecture.jpg"
+    },
+    {
+        "name":"Villas International",
+        "rating":"5",
+        "price":90000,
+        "description":"",
+        "image":"https://www.villasinternacional.com/wp-content/uploads/2019/05/palacio-congresos-zaragoza-villas-internacional.jpg"
+    },
+    {
+        "name":"Modern Home",
+        "rating":"3",
+        "price":30000,
+        "description":"",
+        "image":"https://i.ibb.co/26FYR3d/Modern-Home.jpg"
+    },
+    {
+        "name":"Architecture Digest",
+        "rating":"4",
+        "price":60000,
+        "description":"",
+        "image":"https://i.ibb.co/qRvhTVj/architecture-Digest.jpg" 
+    },
+    {
+        "name":"Modern megazin",
+        "rating":"5",
+        "price":55000,
+        "description":"",
+        "image":"https://i.ibb.co/q5RY0Jj/modern-megazin-1.jpg"
+    } 
+]

@@ -1,9 +1,7 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
-import Furniture from './Furniture';
-// import Swiper JS
+import { A11y, Autoplay, Navigation, Pagination, Scrollbar } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper';
+import Furniture from '../furnitures/Furniture';
 import 'swiper/css/virtual'
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -12,12 +10,12 @@ import 'swiper/css/autoplay';
 import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const Furnitures = () => {
-    const [furnitures, setFurnitures] = useState([]);
+const Architectures = () => {
+    const [architectures, setArchitectures] = useState([]);
     useEffect(() => {
-        fetch('furnitures.json')
+        fetch('architecture.json')
             .then(res => res.json())
-            .then(data => setFurnitures(data))
+            .then(data => setArchitectures(data))
     }, [])
 
     const sliderRef = useRef(null);
@@ -33,10 +31,10 @@ const Furnitures = () => {
     }, []);
     return (
         // <div style={{backgroundImage:`url(https://i.ibb.co/cJsKnvj/design.jpg)`}} className='bg-fixed '>
-        <div id='furnitures' className='w-3/4 mx-auto'>
+        <div  className='w-3/4 mx-auto my-32'>
             <div className='md:flex justify-between mb-3 items-center'>
                 <div>
-                    <p className='text-3xl'>Furniture</p>
+                    <p className='text-3xl'>Architectures</p>
                 </div>
                 <div className='flex justify-end gap-10'>
                     <div className="text-end" onClick={handlePrev} >
@@ -73,16 +71,16 @@ const Furnitures = () => {
                 spaceBetween={50}
                 slidesPerView={2}
                 autoplay={{
-                    delay: 2000
+                    delay: 2500
                 }}
 
-            // onSwiper={(swiper) => console.log(swiper)}
-            // onSlideChange={() => console.log('slide change')}
+                // onSwiper={(swiper) => console.log(swiper)}
+                // onSlideChange={() => console.log('slide change')}
             >
 
 
                 {
-                    furnitures.map((furniture, index) => <SwiperSlide key={index} ><Furniture SwiperSlide={SwiperSlide} furniture={furniture} /> </SwiperSlide>)
+                    architectures.map((furniture, index) => <SwiperSlide key={index} ><Furniture SwiperSlide={SwiperSlide} furniture={furniture}  /> </SwiperSlide>)
 
                 }
 
@@ -94,4 +92,4 @@ const Furnitures = () => {
     );
 };
 
-export default Furnitures;
+export default Architectures;

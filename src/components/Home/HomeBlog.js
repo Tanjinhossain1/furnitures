@@ -33,7 +33,7 @@ const HomeBlog = () => {
                         <div className='p-5'>
                             <p className='text-gray-400 font-bold'>PLANNING</p>
                             <p className='text-xl font-semibold'>How to Find the Best Price Structure for Your Home Staging Services
-</p>
+                            </p>
                             <button className='font-semibold mt-4'>Read More</button>
                         </div>
                     </div>

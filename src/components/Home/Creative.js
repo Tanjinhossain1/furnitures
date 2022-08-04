@@ -2,7 +2,7 @@ import React from 'react';
 
 const Creative = () => {
     return (
-        <div className='mt-12'>
+        <div  className='mt-12'>
             <div className='lg:w-3/4 mx-auto lg:flex justify-between ' >
 
                 <div>

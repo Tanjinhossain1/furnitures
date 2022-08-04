@@ -1,8 +1,12 @@
 import React from 'react';
+import useHoverEffect from '../hooks/useHoverEffect';
 
 const WhatWeAre = () => {
+    const [hoverEffect,setHoverEffect]= useHoverEffect();
+    // console.log('hoverEffect',hoverEffect)
     return (
-        <div>
+        <div  onMouseEnter={()=>setHoverEffect(true)}
+        onMouseLeave={()=>setHoverEffect(false)}>
             <div className='lg:w-3/4 mx-auto lg:flex justify-around items-center mt-32'>
                 <div className='w-2/4 mx-auto'>
                     <p className='font-bold text-yellow-500'>WHO ARE WE</p>

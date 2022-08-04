@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
-import { FaFacebook, FaFacebookF, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { FaGithub, FaFacebookF, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
@@ -19,7 +19,7 @@ const Footer = () => {
                             <input type="text" placeholder="EMAIL" class="input input-bordered input-primary w-full max-w-xs mt-2" />
                             <button className='mt-4 w-full lg:w-[355px] rounded-lg mb-6 border-white border-2 py-2'>SIGN UP</button>
                             <p>This site is intended for US. By signing up. you understand and agree that your that your date will be collected and used subject to our US Privacy Pollcy and Terms of Use.</p>
-                          <div className='mt-6 grid grid-cols-3 sm:grid-cols-4'>
+                          <div className='mt-6 grid grid-cols-3 sm:grid-cols-5'>
                           <div className='border-4 rounded-full py-2 flex justify-center w-[50px] border-white bg-black'>
                                 <a className='text-2xl text-white' target="_blank" rel="noreferrer" href="https://www.instagram.com/sktanjin/"><FaInstagram /></a>
                             </div>
@@ -31,6 +31,9 @@ const Footer = () => {
                             </div>
                           <div className='border-4 rounded-full py-2 flex justify-center w-[50px] border-white bg-black'>
                                 <a className='text-2xl text-white' target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/tanjin-hossain-56765123b/"><FaLinkedin /></a>
+                            </div>
+                          <div className='border-4 rounded-full py-2 flex justify-center w-[50px] border-white bg-black'>
+                                <a className='text-2xl text-white' target="_blank" rel="noreferrer" href="https://github.com/Tanjinhossain1"><FaGithub /></a>
                             </div>
                           </div>
                         </div>
