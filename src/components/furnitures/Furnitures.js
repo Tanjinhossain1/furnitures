@@ -11,14 +11,14 @@ import 'swiper/css/scrollbar';
 import 'swiper/css/autoplay';
 import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useQuery } from '@tanstack/react-query';
 
 const Furnitures = () => {
-    const [furnitures, setFurnitures] = useState([]);
-    useEffect(() => {
-        fetch('furnitures.json')
-            .then(res => res.json())
-            .then(data => setFurnitures(data))
-    }, [])
+    const { isLoading, data:products } = useQuery(['architectures'], () =>
+    fetch('https://shrouded-garden-02872.herokuapp.com/furnitures').then(res =>
+      res.json()
+    )
+  )
 
     const sliderRef = useRef(null);
 
@@ -31,6 +31,10 @@ const Furnitures = () => {
         if (!sliderRef.current) return;
         sliderRef.current.swiper.slideNext();
     }, []);
+    if(isLoading){
+        return <button className='btn' >loading</button>
+    }
+    const furnitures = products.filter(furniture=>furniture.category==='furniture')
     return (
         // <div style={{backgroundImage:`url(https://i.ibb.co/cJsKnvj/design.jpg)`}} className='bg-fixed '>
         <div id='furnitures' className='w-3/4 mx-auto'>
@@ -82,7 +86,7 @@ const Furnitures = () => {
 
 
                 {
-                    furnitures.map((furniture, index) => <SwiperSlide key={index} ><Furniture SwiperSlide={SwiperSlide} furniture={furniture} /> </SwiperSlide>)
+                    furnitures.map((furniture) => <SwiperSlide key={furniture._id} ><Furniture SwiperSlide={SwiperSlide} furniture={furniture} /> </SwiperSlide>)
 
                 }
 

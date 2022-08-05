@@ -8,18 +8,21 @@ import { BrowserRouter } from 'react-router-dom';
 // import {createStore,applyMiddleware} from 'redux';
 import { Provider } from "react-redux";
 import configureStore from './store';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+
+const queryClient = new QueryClient()
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <Provider store={configureStore()}>
-  <BrowserRouter>
-    <React.StrictMode>
-      {/* <Provider>
-      </Provider> */}
-        <App />
-    </React.StrictMode>
-  </BrowserRouter>
-  </Provider>
+  <QueryClientProvider client={queryClient}>
+    <Provider store={configureStore()}>
+      <BrowserRouter>
+        <React.StrictMode>
+          <App />
+        </React.StrictMode>
+      </BrowserRouter>
+    </Provider>
+  </QueryClientProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function

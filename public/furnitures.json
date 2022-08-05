@@ -2,6 +2,7 @@
     {
         "name":"Sofa",
         "rating":"5",
+        "category":"furniture",
         "price":3000,
         "description":"a long upholstered seat usually with arms and a back and often convertible into a bed.",
         "image":"https://www.skfdecor.com/uploaded-files/category-images/Sofa-Set22-21.jpg"
@@ -9,6 +10,7 @@
     {
         "name":"Park bench",
         "rating":"4",
+        "category":"furniture",
         "price":200,
         "description":"a long seat made of wood or metal that two or more people can sit on, placed in a public place or open space in a town.",
         "image":"https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Garden_bench_001.jpg/800px-Garden_bench_001.jpg"
@@ -16,6 +18,7 @@
     {
         "name":"Upholstered bench",
         "rating":"3",
+        "category":"furniture",
         "price":400,
 
         "description":" Upholstered benches are exactly what they sound like: benches made with a wooden or metal support and that have seating areas covered",
@@ -24,6 +27,7 @@
     {
         "name":"Wing chair",
         "rating":"4",
+        "category":"furniture",
         "price":700,
         "description":" a tall-backed, heavily upholstered easy chair with armrests and wings, or lugs, projecting between the back and arms to protect against drafts.",
         "image":"https://media.karousell.com/media/photos/products/2020/6/4/wing_chair_1591294705_357ee862.jpg"
@@ -31,6 +35,7 @@
     {
         "name":"Bed",
         "rating":"5",
+        "category":"furniture",
         "price":2000,
         "description":"The perfect bedroom includes a well-constructed mattress that provides you with the sleep surface that best meets your physical needs and preferences.",
         "image":"https://stylesatlife.com/wp-content/uploads/2019/12/latest-bed-designs-in-2020.jpg.webp"
@@ -38,6 +43,7 @@
     {
         "name":"Table",
         "rating":"3",
+        "category":"furniture",
         "price":100,
         "description":"A table is an arrangement of information or data, typically in rows and columns, or possibly in a more complex structure.",
         "image":"https://static.toiimg.com/thumb/msid-71758568,width-1200,height-900,resizemode-4/.jpg"

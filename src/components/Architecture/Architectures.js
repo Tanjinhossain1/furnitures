@@ -9,26 +9,31 @@ import 'swiper/css/scrollbar';
 import 'swiper/css/autoplay';
 import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useQuery } from '@tanstack/react-query';
 
 const Architectures = () => {
-    const [architectures, setArchitectures] = useState([]);
-    useEffect(() => {
-        fetch('architecture.json')
-            .then(res => res.json())
-            .then(data => setArchitectures(data))
-    }, [])
-
     const sliderRef = useRef(null);
 
-    const handlePrev = useCallback(() => {
-        if (!sliderRef.current) return;
-        sliderRef.current.swiper.slidePrev();
-    }, []);
+    const { isLoading, data:products } = useQuery(['architectures'], () =>
+    fetch('https://shrouded-garden-02872.herokuapp.com/furnitures').then(res =>
+      res.json()
+    )
+  )
 
-    const handleNext = useCallback(() => {
-        if (!sliderRef.current) return;
-        sliderRef.current.swiper.slideNext();
-    }, []);
+  const handlePrev = useCallback(() => {
+      if (!sliderRef.current) return;
+      sliderRef.current.swiper.slidePrev();
+  }, []);
+
+  const handleNext = useCallback(() => {
+      if (!sliderRef.current) return;
+      sliderRef.current.swiper.slideNext();
+  }, []);
+
+  if(isLoading){
+      return <button className='btn' >loading</button>
+  }
+    const architectures = products.filter(architecture=>architecture.category==='architecture')
     return (
         // <div style={{backgroundImage:`url(https://i.ibb.co/cJsKnvj/design.jpg)`}} className='bg-fixed '>
         <div  className='w-3/4 mx-auto my-32'>
@@ -81,7 +86,6 @@ const Architectures = () => {
 
                 {
                     architectures.map((furniture, index) => <SwiperSlide key={index} ><Furniture SwiperSlide={SwiperSlide} furniture={furniture}  /> </SwiperSlide>)
-
                 }
 
                 {/* </div> */}
