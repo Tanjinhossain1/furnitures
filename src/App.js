@@ -1,4 +1,4 @@
-import { Routes,Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import About from './components/about/About';
 import Home from './components/Home/Home';
@@ -12,23 +12,27 @@ import SignUp from './components/Login/signUp';
 import Aos from "aos";
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
+import Cart from './pages/Cart';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
-  useEffect(()=>{
+  useEffect(() => {
     Aos.init({})
-    },[])
+  }, [])
   return (
     <div className='scroll-m-10'>
-     <Navbar  />
-     <Routes>
-      <Route path='/' element={<Home />} />
-      <Route path='/home' element={<Home />} />
-      <Route path='/about' element={<About />} />
-      <Route path='/login' element={<Login />} />
-      <Route path='/signUp' element={<SignUp />} />
-     </Routes>
-
-     <Footer />
+      <Navbar />
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/home' element={<Home />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/signUp' element={<SignUp />} />
+        <Route path='/cart' element={<Cart />} />
+      </Routes>
+      <ToastContainer />
+      <Footer />
     </div>
   );
 }

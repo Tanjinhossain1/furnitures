@@ -12,31 +12,34 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useQuery } from '@tanstack/react-query';
 
 const Architectures = () => {
-    const sliderRef = useRef(null);
-
-    const { isLoading, data:products } = useQuery(['architectures'], () =>
-    fetch('https://shrouded-garden-02872.herokuapp.com/furnitures').then(res =>
-      res.json()
+    
+    const { isLoading, data: products, refetch } = useQuery(['architectures'], () =>
+    fetch('http://localhost:5000/furnitures').then(res =>
+    res.json()
     )
-  )
+    )
+    
+    const sliderRef = useRef(null);
+    const handlePrev = useCallback(() => {
+        if (!sliderRef.current) return;
+        sliderRef.current.swiper.slidePrev();
+    }, []);
 
-  const handlePrev = useCallback(() => {
-      if (!sliderRef.current) return;
-      sliderRef.current.swiper.slidePrev();
-  }, []);
+    const handleNext = useCallback(() => {
+        if (!sliderRef.current) return;
+        sliderRef.current.swiper.slideNext();
+    }, []);
 
-  const handleNext = useCallback(() => {
-      if (!sliderRef.current) return;
-      sliderRef.current.swiper.slideNext();
-  }, []);
-
-  if(isLoading){
-      return <button className='btn' >loading</button>
-  }
-    const architectures = products.filter(architecture=>architecture.category==='architecture')
+    if (isLoading) {
+        return <button className='btn' >loading</button>
+    }
+    let architectures;
+    if(!isLoading){
+         architectures = products.filter(architecture => architecture.category === 'architecture')
+    }
     return (
         // <div style={{backgroundImage:`url(https://i.ibb.co/cJsKnvj/design.jpg)`}} className='bg-fixed '>
-        <div  className='w-3/4 mx-auto my-32'>
+        <div className='w-3/4 mx-auto my-32'>
             <div className='md:flex justify-between mb-3 items-center'>
                 <div>
                     <p className='text-3xl'>Architectures</p>
@@ -76,16 +79,16 @@ const Architectures = () => {
                 spaceBetween={50}
                 slidesPerView={2}
                 autoplay={{
-                    delay: 2500
+                    delay: 3500
                 }}
 
-                // onSwiper={(swiper) => console.log(swiper)}
-                // onSlideChange={() => console.log('slide change')}
+            // onSwiper={(swiper) => console.log(swiper)}
+            // onSlideChange={() => console.log('slide change')}
             >
 
 
                 {
-                    architectures.map((furniture, index) => <SwiperSlide key={index} ><Furniture SwiperSlide={SwiperSlide} furniture={furniture}  /> </SwiperSlide>)
+                    architectures.map((furniture, index) => <SwiperSlide key={index} ><Furniture refetch={refetch} furniture={furniture}  /> </SwiperSlide>)
                 }
 
                 {/* </div> */}

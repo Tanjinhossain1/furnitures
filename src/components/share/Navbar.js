@@ -1,23 +1,30 @@
+import { useQuery } from '@tanstack/react-query';
 import React, { useState } from 'react';
+import { FaCartPlus } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import useHoverEffect from '../hooks/useHoverEffect';
+import useCart from '../hooks/useCart';
 
 const Navbar = () => {
-  const [menuHover, setMenuHover] = useState(false);
-  const [home, setHome] = useState(false);
-  const [login, setLogin] = useState(false);
-  const [about, setAbout] = useState(false);
+  // const { isLoading, data: products, refetch } = useQuery(['allCartProduct'], () =>
+  //   fetch('http://localhost:5000/allCartProduct').then(res =>
+  //     res.json()
+  //   )
+  // )
+  // if (isLoading) {
+    //   return <button className='btn btn-circle'>Loading</button>
+    // }
+    const  {products,refetch}  = useCart();
+    // refetch()
 
-  console.log(menuHover)
   const navItems = <>
     <li><Link to='/home'>HOME</Link></li>
+    <li className='text-xl'><Link to='/cart'><FaCartPlus /><sup className='mb-2'>{products?.length}</sup> </Link></li>
     <li><Link to='/about'>ABOUT</Link></li>
     <li><Link to='/login'>LOGIN</Link></li>
   </>
-  return (
-    <div className=''  
-    >
 
+  return (
+    <div className='' >
       <div className={`navbar bg-gradient-to-l duration-1000 fixed number1 hoverEffect && from-black text-white via-[#0a1963] to-[#890dd6]  `}>
         <div className="navbar-start ">
           <div className="dropdown">

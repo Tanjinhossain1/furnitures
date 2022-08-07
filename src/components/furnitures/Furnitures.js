@@ -14,11 +14,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useQuery } from '@tanstack/react-query';
 
 const Furnitures = () => {
-    const { isLoading, data:products } = useQuery(['architectures'], () =>
-    fetch('https://shrouded-garden-02872.herokuapp.com/furnitures').then(res =>
-      res.json()
+    const { isLoading, data: products, refetch } = useQuery(['architectures'], () =>
+        fetch('http://localhost:5000/furnitures').then(res =>
+            res.json()
+        )
     )
-  )
 
     const sliderRef = useRef(null);
 
@@ -31,10 +31,10 @@ const Furnitures = () => {
         if (!sliderRef.current) return;
         sliderRef.current.swiper.slideNext();
     }, []);
-    if(isLoading){
+    if (isLoading) {
         return <button className='btn' >loading</button>
     }
-    const furnitures = products.filter(furniture=>furniture.category==='furniture')
+    const furnitures = products.filter(furniture => furniture.category === 'furniture')
     return (
         // <div style={{backgroundImage:`url(https://i.ibb.co/cJsKnvj/design.jpg)`}} className='bg-fixed '>
         <div id='furnitures' className='w-3/4 mx-auto'>
@@ -77,16 +77,12 @@ const Furnitures = () => {
                 spaceBetween={50}
                 slidesPerView={2}
                 autoplay={{
-                    delay: 2000
+                    delay: 3000
                 }}
-
-            // onSwiper={(swiper) => console.log(swiper)}
-            // onSlideChange={() => console.log('slide change')}
             >
 
-
                 {
-                    furnitures.map((furniture) => <SwiperSlide key={furniture._id} ><Furniture SwiperSlide={SwiperSlide} furniture={furniture} /> </SwiperSlide>)
+                    furnitures.map((furniture) => <SwiperSlide key={furniture._id} ><Furniture refetch={refetch}  furniture={furniture}  /> </SwiperSlide>)
 
                 }
 
