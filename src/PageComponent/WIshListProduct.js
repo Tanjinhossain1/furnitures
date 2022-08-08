@@ -1,37 +1,11 @@
 import { faDeleteLeft, faStar } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { useState } from 'react';
+import React from 'react';
 
-const CartProduct = ({ product, refetch }) => {
-    const [quantityInput, setQuantityInput] = useState(false);
-    const [newQuantity, setNewQuantity] = useState(null);
-
-    const { name, image, rating, price, quantity } = product;
-    
-    const addQuantity = (newCart) => {
-        const { price, _id, quantity } = newCart;
-        let newPrice = +newQuantity * price;
-        if (+newQuantity < quantity) {
-             newPrice = price / +newQuantity;
-        }
-        fetch(`http://localhost:5000/updateCartProduct/${_id}`, {
-            method: 'PUT',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify({ newQuantity, newPrice })
-        })
-            .then(res => res.json())
-            .then(data => {
-                refetch();
-                console.log(data)
-            })
-       
-    }
-
-    // delete cart product 
-    const deleteCartProduct = (id) => {
-        fetch(`http://localhost:5000/deleteCartProduct/${id}`, {
+const WIshListProduct = ({product,refetch}) => {
+    const { name, image, rating, price } = product;
+    const deleteWishListProduct = (id) => {
+        fetch(`http://localhost:5000/deleteWishListProduct/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())
@@ -42,6 +16,7 @@ const CartProduct = ({ product, refetch }) => {
     }
     return (
         <div>
+            <div>
             <div>
                 <div className=''>
 
@@ -55,22 +30,7 @@ const CartProduct = ({ product, refetch }) => {
 
                             <p className={` text-xl mt-2 `} >{name}</p>
                             <p className={` font-bold text-pink-800 `} >{price}$</p>
-                            {
-                                quantityInput ? <div>
-                                    <div className='flex items-center'>
-                                        <input onBlur={(e) => setNewQuantity(e.target.value)} name='quantity' type="text" placeholder="Type here" class="input input-bordered input-primary w-full max-w-xs" />
-                                        <button onClick={() => addQuantity(product)} className='btn btn-primary ' >Add</button>
-                                    </div>
-                                    <button className='' onClick={() => setQuantityInput(false)}>Back</button>
-                                </div>
-
-                                    :
-
-                                    <div className='flex items-center justify-between'>
-                                        <p className='text-xl mb-2'>Quantity: {quantity}</p>
-                                        <button onClick={() => setQuantityInput(true)} className='text-green-600 font-semibold'>Add Quantity</button>
-                                    </div>
-                            }
+                           
 
                             <p>
                                 {
@@ -102,13 +62,14 @@ const CartProduct = ({ product, refetch }) => {
                                 }
                                 {/* <FontAwesomeIcon className='text-gray-300' icon={faStar} /> */}
                             </p>
-                            <button className='text-4xl text-red-600' onClick={() => deleteCartProduct(product._id)}><FontAwesomeIcon icon={faDeleteLeft} /></button>
+                            <button className='text-4xl text-red-600' onClick={() => deleteWishListProduct(product._id)}><FontAwesomeIcon icon={faDeleteLeft} /></button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        </div>
     );
 };
 
-export default CartProduct;
+export default WIshListProduct;

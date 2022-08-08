@@ -30,8 +30,27 @@ const Furniture = ({ furniture, refetch }) => {
             })
              
     }
-    const wishList = (id) => {
-        console.log(id)
+    const wishList = (product) => {
+        const { name, image, rating, price, category,_id } = product;
+        const productDetail = { name, image, rating, category, price }
+        fetch(`http://localhost:5000/addToWishList/${_id}`, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(productDetail)
+        })
+            .then(res => res.json())
+            .then(data => {
+                refetch();
+                if(data.upsertedId===null){
+                    toast.error('Already You Added the WishList ',{
+                    position: "bottom-center",
+                    theme:"dark"
+                })
+                }
+                console.log(data)
+            })
     }
     return (
         <div className=''>

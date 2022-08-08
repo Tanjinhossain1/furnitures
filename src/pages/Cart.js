@@ -12,9 +12,23 @@ const Cart = () => {
 if (isLoading) {
     return <button className='btn btn-circle'>Loading</button>
 }
+let prices = products.map(p => p.price);
+    let sum = 0;
+
+    for (let i = 0; i < prices.length; i++) {
+        sum += prices[i];
+    }
+    console.log(sum)
     return (
         <div className='py-28'>
-            <p className='text-4xl'>{products?.length}</p>
+
+           <div className='text-center mb-12'>
+           <p className='text-4xl'>Total Product: {products?.length}</p>
+           <p className='text-4xl'>Total Price: <span className='font-bold text-pink-700'>{sum}$</span> </p>
+            <button className='bg-green-600 py-2 px-8 text-white font-semibold rounded-lg mt-2'>Payment</button>
+           </div>
+
+
             <div>
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 w-3/4 mx-auto'>
                 {

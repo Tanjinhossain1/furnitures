@@ -15,6 +15,7 @@ import { useEffect } from 'react';
 import Cart from './pages/Cart';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import WishList from './pages/WishList';
 
 function App() {
   useEffect(() => {
@@ -30,6 +31,7 @@ function App() {
         <Route path='/login' element={<Login />} />
         <Route path='/signUp' element={<SignUp />} />
         <Route path='/cart' element={<Cart />} />
+        <Route path='/wishList' element={<WishList />} />
       </Routes>
       <ToastContainer />
       <Footer />
