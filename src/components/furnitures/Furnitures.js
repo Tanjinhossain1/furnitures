@@ -15,7 +15,7 @@ import { useQuery } from '@tanstack/react-query';
 
 const Furnitures = () => {
     const { isLoading, data: products, refetch } = useQuery(['architectures'], () =>
-        fetch('http://localhost:5000/furnitures').then(res =>
+        fetch('https://shrouded-garden-02872.herokuapp.com/furnitures').then(res =>
             res.json()
         )
     )
@@ -82,7 +82,7 @@ const Furnitures = () => {
             >
 
                 {
-                    furnitures.map((furniture) => <SwiperSlide key={furniture._id} ><Furniture refetch={refetch}  furniture={furniture}  /> </SwiperSlide>)
+                    furnitures.map((furniture) => <SwiperSlide key={furniture._id} ><Furniture refetch={refetch} furniture={furniture} /> </SwiperSlide>)
 
                 }
 

@@ -6,15 +6,15 @@ import useCart from '../hooks/useCart';
 
 const Navbar = () => {
   // const { isLoading, data: products, refetch } = useQuery(['allCartProduct'], () =>
-  //   fetch('http://localhost:5000/allCartProduct').then(res =>
+  //   fetch('https://shrouded-garden-02872.herokuapp.com/allCartProduct').then(res =>
   //     res.json()
   //   )
   // )
   // if (isLoading) {
-    //   return <button className='btn btn-circle'>Loading</button>
-    // }
-    const  {products,refetch}  = useCart();
-    // refetch()
+  //   return <button className='btn btn-circle'>Loading</button>
+  // }
+  const { products, refetch } = useCart();
+  // refetch()
 
   const navItems = <>
     <li><Link to='/home'>HOME</Link></li>

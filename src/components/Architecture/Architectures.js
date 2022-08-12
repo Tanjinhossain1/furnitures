@@ -12,13 +12,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useQuery } from '@tanstack/react-query';
 
 const Architectures = () => {
-    
+
     const { isLoading, data: products, refetch } = useQuery(['architectures'], () =>
-    fetch('http://localhost:5000/furnitures').then(res =>
-    res.json()
+        fetch('https://shrouded-garden-02872.herokuapp.com/furnitures').then(res =>
+            res.json()
+        )
     )
-    )
-    
+
     const sliderRef = useRef(null);
     const handlePrev = useCallback(() => {
         if (!sliderRef.current) return;
@@ -34,8 +34,8 @@ const Architectures = () => {
         return <button className='btn' >loading</button>
     }
     let architectures;
-    if(!isLoading){
-         architectures = products.filter(architecture => architecture.category === 'architecture')
+    if (!isLoading) {
+        architectures = products.filter(architecture => architecture.category === 'architecture')
     }
     return (
         // <div style={{backgroundImage:`url(https://i.ibb.co/cJsKnvj/design.jpg)`}} className='bg-fixed '>
@@ -88,7 +88,7 @@ const Architectures = () => {
 
 
                 {
-                    architectures.map((furniture, index) => <SwiperSlide key={index} ><Furniture refetch={refetch} furniture={furniture}  /> </SwiperSlide>)
+                    architectures.map((furniture, index) => <SwiperSlide key={index} ><Furniture refetch={refetch} furniture={furniture} /> </SwiperSlide>)
                 }
 
                 {/* </div> */}

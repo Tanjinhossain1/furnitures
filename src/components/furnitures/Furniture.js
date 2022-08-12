@@ -8,9 +8,9 @@ const Furniture = ({ furniture, refetch }) => {
     const { name, image, rating, price } = furniture;
     const addToCart = (product) => {
         const quantity = 1
-        const { name, image, rating, price, category,_id } = product;
+        const { name, image, rating, price, category, _id } = product;
         const productDetail = { name, image, rating, category, quantity, price }
-        fetch(`http://localhost:5000/addToCart/${_id}`, {
+        fetch(`https://shrouded-garden-02872.herokuapp.com/addToCart/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -20,20 +20,20 @@ const Furniture = ({ furniture, refetch }) => {
             .then(res => res.json())
             .then(data => {
                 refetch();
-                if(data.upsertedId===null){
-                    toast.error('Already You Added the Cart ',{
-                    position: "bottom-center",
-                    theme:"colored"
-                })
+                if (data.upsertedId === null) {
+                    toast.error('Already You Added the Cart ', {
+                        position: "bottom-center",
+                        theme: "colored"
+                    })
                 }
                 console.log(data)
             })
-             
+
     }
     const wishList = (product) => {
-        const { name, image, rating, price, category,_id } = product;
+        const { name, image, rating, price, category, _id } = product;
         const productDetail = { name, image, rating, category, price }
-        fetch(`http://localhost:5000/addToWishList/${_id}`, {
+        fetch(`https://shrouded-garden-02872.herokuapp.com/addToWishList/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -43,11 +43,11 @@ const Furniture = ({ furniture, refetch }) => {
             .then(res => res.json())
             .then(data => {
                 refetch();
-                if(data.upsertedId===null){
-                    toast.error('Already You Added the WishList ',{
-                    position: "bottom-center",
-                    theme:"dark"
-                })
+                if (data.upsertedId === null) {
+                    toast.error('Already You Added the WishList ', {
+                        position: "bottom-center",
+                        theme: "dark"
+                    })
                 }
                 console.log(data)
             })

@@ -7,14 +7,14 @@ const CartProduct = ({ product, refetch }) => {
     const [newQuantity, setNewQuantity] = useState(null);
 
     const { name, image, rating, price, quantity } = product;
-    
+
     const addQuantity = (newCart) => {
         const { price, _id, quantity } = newCart;
         let newPrice = +newQuantity * price;
         if (+newQuantity < quantity) {
-             newPrice = price / +newQuantity;
+            newPrice = price / +newQuantity;
         }
-        fetch(`http://localhost:5000/updateCartProduct/${_id}`, {
+        fetch(`https://shrouded-garden-02872.herokuapp.com/updateCartProduct/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -26,12 +26,12 @@ const CartProduct = ({ product, refetch }) => {
                 refetch();
                 console.log(data)
             })
-       
+
     }
 
     // delete cart product 
     const deleteCartProduct = (id) => {
-        fetch(`http://localhost:5000/deleteCartProduct/${id}`, {
+        fetch(`https://shrouded-garden-02872.herokuapp.com/deleteCartProduct/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

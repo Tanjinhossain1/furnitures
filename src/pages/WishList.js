@@ -4,22 +4,22 @@ import WIshListProduct from '../PageComponent/WIshListProduct';
 
 const WishList = () => {
     const { isLoading, data: products, refetch } = useQuery(['wishList'], () =>
-    fetch('http://localhost:5000/wishList').then(res =>
-        res.json()
+        fetch('https://shrouded-garden-02872.herokuapp.com/wishList').then(res =>
+            res.json()
+        )
     )
-)
-if (isLoading) {
-    return <button className='btn btn-circle'>Loading</button>
-}
+    if (isLoading) {
+        return <button className='btn btn-circle'>Loading</button>
+    }
     return (
         <div className='py-28'>
-           
-           <div>
-                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 w-3/4 mx-auto'>
-                {
-                    products.map((product) =>  <WIshListProduct refetch={refetch} key={product._id} product={product} />)
 
-                }
+            <div>
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 w-3/4 mx-auto'>
+                    {
+                        products.map((product) => <WIshListProduct refetch={refetch} key={product._id} product={product} />)
+
+                    }
                 </div>
             </div>
         </div>
