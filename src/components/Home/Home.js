@@ -1,7 +1,5 @@
 import React from 'react';
 import Furnitures from '../furnitures/Furnitures';
-import Banner from './Banner';
-import FurnitureDesign from './FurnitureDesign';
 import MidChair from './BestFurniture';
 import Creative from './Creative';
 import ModernCollection from './ModernCollection';
@@ -13,6 +11,7 @@ import HomeBlog from './HomeBlog';
 import Perfect from './Perfect';
 import WeOffer from './WeOffer';
 import Architectures from '../Architecture/Architectures';
+import Reviews from './Reviews';
 
 const Home = () => {
     return (
@@ -31,6 +30,7 @@ const Home = () => {
            <Creative />
            <HomeBlog />
            <Perfect />
+           <Reviews />
         </div>
     );
 };
