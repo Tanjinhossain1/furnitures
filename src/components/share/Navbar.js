@@ -18,7 +18,7 @@ const Navbar = () => {
 
   const navItems = <>
     <li><Link to='/home'>HOME</Link></li>
-    <li className='text-xl'><Link to='/cart'><FaCartPlus /><sup className='mb-2'>{products?.length}</sup> </Link></li>
+    <li className='text-xl'><Link to='/cart'><FaCartPlus /></Link></li>
     <li><Link to='/wishList'>WISH LIST</Link></li>
     <li><Link to='/about'>ABOUT</Link></li>
     <li><Link to='/login'>LOGIN</Link></li>
