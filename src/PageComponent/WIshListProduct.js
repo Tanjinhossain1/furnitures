@@ -5,7 +5,7 @@ import React from 'react';
 const WIshListProduct = ({ product, refetch }) => {
     const { name, image, rating, price } = product;
     const deleteWishListProduct = (id) => {
-        fetch(`https://shrouded-garden-02872.herokuapp.com/deleteWishListProduct/${id}`, {
+        fetch(`https://furniture-ms4p.onrender.com/deleteWishListProduct/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

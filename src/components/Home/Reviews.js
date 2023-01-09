@@ -12,7 +12,7 @@ import Furniture from '../furnitures/Furniture';
 
 const Reviews = () => {
     const { isLoading, data: products, refetch } = useQuery(['architectures'], () =>
-        fetch('https://shrouded-garden-02872.herokuapp.com/furnitures').then(res =>
+        fetch('https://furniture-ms4p.onrender.com/furnitures').then(res =>
             res.json()
         )
     )

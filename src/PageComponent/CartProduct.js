@@ -14,7 +14,7 @@ const CartProduct = ({ product, refetch }) => {
         if (+newQuantity < quantity) {
             newPrice = price / +newQuantity;
         }
-        fetch(`https://shrouded-garden-02872.herokuapp.com/updateCartProduct/${_id}`, {
+        fetch(`https://furniture-ms4p.onrender.com/updateCartProduct/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -31,7 +31,7 @@ const CartProduct = ({ product, refetch }) => {
 
     // delete cart product 
     const deleteCartProduct = (id) => {
-        fetch(`https://shrouded-garden-02872.herokuapp.com/deleteCartProduct/${id}`, {
+        fetch(`https://furniture-ms4p.onrender.com/deleteCartProduct/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

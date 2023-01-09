@@ -4,7 +4,7 @@ import WIshListProduct from '../PageComponent/WIshListProduct';
 
 const WishList = () => {
     const { isLoading, data: products, refetch } = useQuery(['wishList'], () =>
-        fetch('https://shrouded-garden-02872.herokuapp.com/wishList').then(res =>
+        fetch('https://furniture-ms4p.onrender.com/wishList').then(res =>
             res.json()
         )
     )

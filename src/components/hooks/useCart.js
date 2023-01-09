@@ -2,7 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 
 const useCart = () => {
     const { isLoading, data: products, refetch } = useQuery(['allCartProduct'], () =>
-        fetch('https://shrouded-garden-02872.herokuapp.com/allCartProduct').then(res =>
+        fetch('https://furniture-ms4p.onrender.com/allCartProduct').then(res =>
             res.json()
         )
     )

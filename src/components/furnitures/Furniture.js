@@ -10,7 +10,7 @@ const Furniture = ({ furniture, refetch }) => {
         const quantity = 1
         const { name, image, rating, price, category, _id } = product;
         const productDetail = { name, image, rating, category, quantity, price }
-        fetch(`https://shrouded-garden-02872.herokuapp.com/addToCart/${_id}`, {
+        fetch(`https://furniture-ms4p.onrender.com/addToCart/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -33,7 +33,7 @@ const Furniture = ({ furniture, refetch }) => {
     const wishList = (product) => {
         const { name, image, rating, price, category, _id } = product;
         const productDetail = { name, image, rating, category, price }
-        fetch(`https://shrouded-garden-02872.herokuapp.com/addToWishList/${_id}`, {
+        fetch(`https://furniture-ms4p.onrender.com/addToWishList/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
